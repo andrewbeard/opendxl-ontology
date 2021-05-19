@@ -1,5 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Actions Status](https://github.com/opencybersecurityalliance/opendxl-ontology/workflows/Build/badge.svg)](https://github.com/opencybersecurityalliance/opendxl-ontology/actions)
+[![Actions Status](https://github.com/andrewbeard/opendxl-ontology/workflows/Build/badge.svg)](https://github.com/andrewbeard/opendxl-ontology/actions)
 
 # OpenDXL Ontology
 The OpenDXL Ontology project is focused on the development of an open and interoperable cybersecurity messaging format for use with the OpenDXL messaging bus.
