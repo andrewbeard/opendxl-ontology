@@ -24,8 +24,7 @@ jobs:
 
     - name: Deploy to GitHub pages
       uses: JamesIves/github-pages-deploy-action@4.1.3
-      if: github.event_name == 'push'
       with:
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: dist
+        token: ${{ secrets.ACCESS_TOKEN }}
+        branch: gh-pages
+        folder: dist
