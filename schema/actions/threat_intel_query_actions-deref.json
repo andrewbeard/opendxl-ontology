@@ -1,0 +1,292 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Threat Intel platform query actions",
+        "version": "0.0.1",
+        "description": "Threat Intel platform query actions"
+    },
+    "requests": {
+        "/action/query/file/by_hash": {
+            "description": "Query for information about a specific file via hash",
+            "payload": {
+                "properties": {
+                    "hashes": {
+                        "type": "object",
+                        "properties": {
+                            "md5": {
+                                "type": "string",
+                                "description": "MD5 hash as defined in [RFC1321]"
+                            },
+                            "sha1": {
+                                "type": "string",
+                                "description": "SHA1 hash as defined in [RFC6234]"
+                            },
+                            "sha256": {
+                                "type": "string",
+                                "description": "SHA256 hash as defined in [RFC6234]"
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "hashes"
+                ],
+                "example": {
+                    "hashes": {
+                        "sha1": "52a252a714d391228c4f791b4a0bfee13df36a93"
+                    }
+                }
+            },
+            "response": {
+                "otherFields": {
+                    "status": {
+                        "description": "The status of the response",
+                        "required": false,
+                        "example": "200"
+                    },
+                    "status_text": {
+                        "description": "A free-form human-readable description of the Response status.",
+                        "required": false,
+                        "example": "The action succeeded."
+                    },
+                    "product_name": {
+                        "description": "The product that is the source of the message",
+                        "required": false,
+                        "example": "McAfee Threat Intelligence Exchange (TIE)"
+                    },
+                    "product_version": {
+                        "description": "The version of the product that is the source of the message",
+                        "required": false,
+                        "example": "3.0.0"
+                    }
+                }
+            },
+            "errorResponses": {
+                "400": {
+                    "description": "Bad Request"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                },
+                "500": {
+                    "description": "Internal Error"
+                },
+                "501": {
+                    "description": "Not Implemented"
+                },
+                "503": {
+                    "description": "Service Unavailable"
+                }
+            }
+        },
+        "/action/query/file/by_name": {
+            "description": "Query for information about a specific file via name",
+            "payload": {
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the file as defined in the file system"
+                    }
+                },
+                "required": [
+                    "name"
+                ],
+                "example": {
+                    "name": "gate.php"
+                }
+            },
+            "response": {
+                "otherFields": {
+                    "status": {
+                        "description": "The status of the response",
+                        "required": false,
+                        "example": "200"
+                    },
+                    "status_text": {
+                        "description": "A free-form human-readable description of the Response status.",
+                        "required": false,
+                        "example": "The action succeeded."
+                    },
+                    "product_name": {
+                        "description": "The product that is the source of the message",
+                        "required": false,
+                        "example": "McAfee Threat Intelligence Exchange (TIE)"
+                    },
+                    "product_version": {
+                        "description": "The version of the product that is the source of the message",
+                        "required": false,
+                        "example": "3.0.0"
+                    }
+                }
+            },
+            "errorResponses": {
+                "400": {
+                    "description": "Bad Request"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                },
+                "500": {
+                    "description": "Internal Error"
+                },
+                "501": {
+                    "description": "Not Implemented"
+                },
+                "503": {
+                    "description": "Service Unavailable"
+                }
+            }
+        },
+        "/action/query/host/by_hostname": {
+            "description": "Query for information about a host via hostname",
+            "payload": {
+                "properties": {
+                    "hostname": {
+                        "type": "string",
+                        "description": "Internet host name as specified in [RFC1123]"
+                    }
+                },
+                "required": [
+                    "hostname"
+                ],
+                "example": {
+                    "name": "example.org"
+                }
+            },
+            "response": {
+                "otherFields": {
+                    "status": {
+                        "description": "The status of the response",
+                        "required": false,
+                        "example": "200"
+                    },
+                    "status_text": {
+                        "description": "A free-form human-readable description of the Response status.",
+                        "required": false,
+                        "example": "The action succeeded."
+                    },
+                    "product_name": {
+                        "description": "The product that is the source of the message",
+                        "required": false,
+                        "example": "McAfee Threat Intelligence Exchange (TIE)"
+                    },
+                    "product_version": {
+                        "description": "The version of the product that is the source of the message",
+                        "required": false,
+                        "example": "3.0.0"
+                    }
+                }
+            },
+            "errorResponses": {
+                "400": {
+                    "description": "Bad Request"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                },
+                "500": {
+                    "description": "Internal Error"
+                },
+                "501": {
+                    "description": "Not Implemented"
+                },
+                "503": {
+                    "description": "Service Unavailable"
+                }
+            }
+        },
+        "/action/query/host/by_ip": {
+            "description": "Query for information about a host via IP address",
+            "payload": {
+                "properties": {
+                    "ip": {
+                        "type": "object",
+                        "properties": {
+                            "ipv4": {
+                                "type": "string",
+                                "description": "32 bit IPv4 address as defined in [RFC0791]"
+                            },
+                            "ipv6": {
+                                "type": "string",
+                                "description": "128 bit IPv6 address as defined in [RFC8200]"
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "ip"
+                ],
+                "example": {
+                    "ip": {
+                        "ipv4": "8.8.8.8"
+                    }
+                }
+            },
+            "response": {
+                "otherFields": {
+                    "status": {
+                        "description": "The status of the response",
+                        "required": false,
+                        "example": "200"
+                    },
+                    "status_text": {
+                        "description": "A free-form human-readable description of the Response status.",
+                        "required": false,
+                        "example": "The action succeeded."
+                    },
+                    "product_name": {
+                        "description": "The product that is the source of the message",
+                        "required": false,
+                        "example": "McAfee Threat Intelligence Exchange (TIE)"
+                    },
+                    "product_version": {
+                        "description": "The version of the product that is the source of the message",
+                        "required": false,
+                        "example": "3.0.0"
+                    }
+                }
+            },
+            "errorResponses": {
+                "400": {
+                    "description": "Bad Request"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                },
+                "500": {
+                    "description": "Internal Error"
+                },
+                "501": {
+                    "description": "Not Implemented"
+                },
+                "503": {
+                    "description": "Service Unavailable"
+                }
+            }
+        }
+    }
+}
