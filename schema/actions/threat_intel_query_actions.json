@@ -1,0 +1,102 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Threat Intel platform query actions",
+        "version": "0.0.1",
+        "description": "Threat Intel platform query actions"
+    },
+    "requests": {
+        "/action/query/file/by_hash": {
+            "description": "Query for information about a specific file via hash",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/x-target-hashes"
+                },
+                "required": [
+                    "hashes"
+                ],
+                "example": {
+                    "hashes": {
+                        "sha1": "52a252a714d391228c4f791b4a0bfee13df36a93"
+                    }
+                }
+            },   
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        },
+        "/action/query/file/by_name": {
+            "description": "Query for information about a specific file via name",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/x-target-filename"
+                },
+                "required": [
+                    "name"
+                ],
+                "example": {
+                    "name": "gate.php"
+                }
+            },   
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        },
+        "/action/query/host/by_hostname": {
+            "description": "Query for information about a host via hostname",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/x-target-hostname"
+                },
+                "required": [
+                    "hostname"
+                ],
+                "example": {
+                    "name": "example.org"
+                }
+            },   
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        },
+        "/action/query/host/by_ip": {
+            "description": "Query for information about a host via IP address",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/x-target-ip-address"
+                },
+                "required": [
+                    "ip"
+                ],
+                "example": {
+                    "ip": {
+                        "ipv4": "8.8.8.8"
+                    }
+                }
+            },   
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        }
+    }
+}
