@@ -73,18 +73,26 @@
                 "type": "object",
                 "properties": {
                     "name": {
-                        "type": "string",
-                        "description": "The name of the file as defined in the file system"
+                        "$ref": "#/definitions/data-filename"
                     },
                     "path": {
-                        "type": "string",
-                        "description": "The absolute path to the location of the file in the file system"
+                        "$ref": "#/definitions/data-filepath"
                     },
                     "hashes": {
                         "$ref": "#/definitions/data-hashes",
                         "description": "Hashes of the payload content"
                     }
                 }
+            }
+        },
+        "x-target-filename": {
+            "name": {
+                "$ref": "#/definitions/data-filename"
+            }
+        },
+        "x-target-filepath": {
+            "path": {
+                "$ref": "#/definitions/data-filepath"
             }
         },
         "x-target-hashes": {
@@ -109,6 +117,11 @@
                 "description": "String representing a user"
             }
         },
+        "x-target-ip-address": {
+            "ip": {
+                "$ref": "#/definitions/data-ip-address"
+            }
+        },
         "data-ipv4-address": {
             "type": "string",
             "description": "32 bit IPv4 address as defined in [RFC0791]"
@@ -116,6 +129,17 @@
         "data-ipv6-address": {
             "type": "string",
             "description": "128 bit IPv6 address as defined in [RFC8200]"
+        },
+        "data-ip-address": {
+            "type": "object",
+            "properties": {
+                "ipv4": {
+                    "$ref": "#/definitions/data-ipv4-address"
+                },
+                "ipv6": {
+                    "$ref": "#/definitions/data-ipv6-address"
+                }
+            }
         },
         "data-payload": {
             "type": "object",
@@ -174,6 +198,14 @@
         "data-hostname": {
             "type": "string",
             "description": "Internet host name as specified in [RFC1123]"
+        },
+        "data-filename": {
+            "type": "string",
+            "description": "The name of the file as defined in the file system"
+        },
+        "data-filepath": {
+            "type": "string",
+            "description": "The absolute path to the location of the file in the file system"
         },
         "data-idn_hostname": {
             "type": "string",
