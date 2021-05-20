@@ -127,8 +127,8 @@
                 "$ref": "#/definitions/data-stix-pattern"
             }
         },
-        "x-target-keyword": {
-            "keyword": {
+        "x-target-term": {
+            "term": {
                 "type": "string",
                 "description": "String representing a keyword or text search parameter"
             }
