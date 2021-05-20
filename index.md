@@ -12,6 +12,8 @@
   * [Quarantine device by hostname](schema/actions/quarantine_device_actions#request--action-quarantine-device-by_hostname)
 * [SIEM Anomalies and Event Type IOCs](schema/actions/threat_finding_siem_ioc_actions) ([Specification](schema/actions/threat_finding_siem_ioc_actions-deref.json))
   * [Provides a detailed breakdown of IOC objects](schema/actions/threat_finding_siem_ioc_actions#request--action-threats-findings-de.ae-siem-ioc)
+* [Threat Intel platform ingest actions](schema/actions/threat_intel_ingest_actions) ([Specification](schema/actions/threat_intel_ingest_actions-deref.json))
+  * [Provide a STIX bundle to ingest](schema/actions/threat_intel_ingest_actions#request--action-ingest-stix-bundle)
 * [Threat Intel platform query actions](schema/actions/threat_intel_query_actions) ([Specification](schema/actions/threat_intel_query_actions-deref.json))
   * [Query for information about a host via IP address](schema/actions/threat_intel_query_actions#request--action-query-host-by_ip)
   * [Query for information about a host via hostname](schema/actions/threat_intel_query_actions#request--action-query-host-by_hostname)
