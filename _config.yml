@@ -1,1 +1,4 @@
-theme: jekyll-theme-cayman
+theme: jekyll-theme-caymantheme: jekyll-theme-cayman
+title: OpenDXL Ontology
+include: 
+  - index.md
