@@ -17,6 +17,8 @@
   * [Query for information about a host via hostname](schema/actions/threat_intel_query_actions#request--action-query-host-by_hostname)
   * [Query for information about a specific file via hash](schema/actions/threat_intel_query_actions#request--action-query-file-by_hash)
   * [Query for information about a specific file via name](schema/actions/threat_intel_query_actions#request--action-query-file-by_name)
+  * [Query for information about any matching object via a STIX pattern](schema/actions/threat_intel_query_actions#request--action-query-all-by_stix_pattern)
+  * [Query for information about any matching object via a search string](schema/actions/threat_intel_query_actions#request--action-query-all-by_term)
 * [Threat finding details](schema/actions/threat_finding_actions) ([Specification](schema/actions/threat_finding_actions-deref.json))
   * [Provides a detailed breakdown on threat findings by hostname](schema/actions/threat_finding_actions#request--action-threats-findings-details-by_hostname)
   * [Provides a detailed breakdown on threat findings by mac addresss](schema/actions/threat_finding_actions#request--action-threats-findings-details-by_mac_address)

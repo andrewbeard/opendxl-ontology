@@ -97,6 +97,50 @@
             "errorResponses": {
                 "$ref": "../common_schema.json#/definitions/errorResponses"
             }
+        },
+        "/action/query/all/by_term": {
+            "description": "Query for information about any matching object via a search string",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/x-target-term"
+                },
+                "required": [
+                    "term"
+                ],
+                "example": {
+                    "term": "Fancy Bear"
+                }
+            },   
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        },
+        "/action/query/all/by_stix_pattern": {
+            "description": "Query for information about any matching object via a STIX pattern",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/x-target-stix-pattern"
+                },
+                "required": [
+                    "stix_pattern"
+                ],
+                "example": {
+                    "stix_pattern": "[ipv4-addr:value = '198.51.100.1/32' OR domain-name:value = 'example.com' OR ipv6-addr:value = '2001:0db8:dead:beef:dead:beef:dead:0001/128']"
+                }
+            },   
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
         }
     }
 }
