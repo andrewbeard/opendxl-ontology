@@ -122,6 +122,17 @@
                 "$ref": "#/definitions/data-ip-address"
             }
         },
+        "x-target-stix-pattern": {
+            "stix_pattern": {
+                "$ref": "#/definitions/data-stix-pattern"
+            }
+        },
+        "x-target-keyword": {
+            "keyword": {
+                "type": "string",
+                "description": "String representing a keyword or text search parameter"
+            }
+        },
         "data-ipv4-address": {
             "type": "string",
             "description": "32 bit IPv4 address as defined in [RFC0791]"
@@ -206,6 +217,10 @@
         "data-filepath": {
             "type": "string",
             "description": "The absolute path to the location of the file in the file system"
+        },
+        "data-stix-pattern": {
+            "type": "string",
+            "description": "A STIX pattern a defined by the STIX specification section 9 serialized into a string"
         },
         "data-idn_hostname": {
             "type": "string",
